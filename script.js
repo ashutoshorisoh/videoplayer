@@ -1,4 +1,4 @@
-alert("js is on");
+
 
 // Select elements
 const speedUp = document.querySelector("#spup");
