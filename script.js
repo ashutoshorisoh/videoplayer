@@ -1,5 +1,3 @@
-
-
 // Select elements
 const speedUp = document.querySelector("#spup");
 const speedDown = document.querySelector("#spd");
@@ -9,6 +7,8 @@ const videoBtn = document.querySelector("#videoBtn");
 const videoInput = document.querySelector("#videoInput");
 const videoPlayer = document.querySelector("#main");
 const messageDiv = document.querySelector("#message");
+const forwardButton = document.querySelector("#forward");
+const backwardButton = document.querySelector("#backward");
 
 // Function to handle video input click
 const videoInputHandler = () => {
@@ -147,5 +147,19 @@ document.querySelector('#progressBar').addEventListener('input', (event) => {
     const video = videoPlayer.querySelector("video");
     if (video) {
         video.currentTime = event.target.value;
+    }
+});
+
+// Backward button functionality
+backwardButton.addEventListener('click', function() {
+    const video = videoPlayer.querySelector("video");
+    if (video) {
+        video.currentTime = Math.max(video.currentTime - 10, 0);
+    }
+});
+forwardButton.addEventListener('click', function() {
+    const video = videoPlayer.querySelector("video");
+    if (video) {
+        video.currentTime = Math.max(video.currentTime + 10, 0);
     }
 });
